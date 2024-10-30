@@ -17,7 +17,7 @@ options(stringsAsFactors = FALSE);
 enableWGCNAThreads()
 #IMPORTANTE: establecer el directorio donde se trabajara y donde se encuentra el archivo de entrada
 getwd()
-dir = "" #cambiar a la carpeta donde descargaron los archivos de entrada.
+dir = "C:/Users/micha/OneDrive - Universidad de los andes/9no Semestre Final/Algoritmos en Biologia Computacional/Tarea 5/CoexpresiónYMedidasDeCentralidad/data" #cambiar a la carpeta donde descargaron los archivos de entrada.
 setwd(dir)
 #nombre de la matriz de expresion
 file = "LiverFemale3600.csv"
@@ -45,7 +45,7 @@ abline(h = 15, col = "red")
 
 #PUNTO I: cutHeight es el parametro clave, se debe observar en el dendrograma cual es el punto de corte 
 # de los outliers de acuerdo a la altura en el arbol, modificarlo de acuerdo al umbral
-cutHeight = -1 #cambiar de acuerdo a la gráfica
+cutHeight = 15 #cambiar de acuerdo a la gráfica
 clust = cutreeStatic(sampleTree, cutHeight = cutHeight, minSize = 10)
 table(clust)
 keepSamples = (clust==1)
@@ -114,7 +114,7 @@ text(sft$fitIndices[,1], sft$fitIndices[,5], labels=powers, cex=cex1,col="red")
 
 #PUNTO 2: Escoger un potenciador soft treshold para la produccion de la matriz de adyacencias y la red,
 #basado en el umbral de R^2 establecido en la grafica
-potenciador = -1 #cambiar de acuerdo a la gráfica
+potenciador = 20 #cambiar de acuerdo a la gráfica
 
 #Con este codigo se corre la red y la asignacion de modulos como clusters de genes 
 #basados en su conectividad, todo se guarda como archivos de R aparte para manejar 
@@ -172,8 +172,8 @@ labeledHeatmap(Matrix = CorModuloFenotipo,
 #de acuerdo a su relacion con ciertos fenotipos y trabajar con este en adelante; ademas
 #escoger un rasgo fenotipico con el cual se quiera trabajar, diferente a peso en este caso,
 #cambiar el color para que quede ese modulo
-modulo = "brown" #cambiar el color del modulo por el escogido
-rasgo = as.data.frame(dfFenotipos$weight_g) #en este caso se escoge el atributo weight_g, escoger otro
+modulo = "turquoise" #cambiar el color del modulo por el escogido
+rasgo = as.data.frame(dfFenotipos$Glucose_Insulin) #en este caso se escoge el atributo weight_g, escoger otro
 names(rasgo) = "rasgo" #no cambiar este String, el rasgo que escogio tendra este nombre en los atributos
 nombresModulos = substring(names(MEs), 3)
 
