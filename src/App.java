@@ -106,7 +106,7 @@ public class App {
     }
 
     public static void generarArchivoCytoscape(List<List<Integer>> grafo, List<String> identificadores, double[][] matrizCoexpresion, String archivo) throws IOException {
-        FileWriter writer = new FileWriter(archivo);
+        FileWriter writer = new FileWriter("data/"+archivo);
 
         writer.write("Id gen 1\tId gen 2\tCoeficiente de correlación\n");
 
