@@ -1,5 +1,7 @@
 ## Getting Started
 
+For this App you need just to execute the App.java main, all the requested information is done in one run.
+
 Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
 
 ## Folder Structure
